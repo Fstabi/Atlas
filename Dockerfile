@@ -27,5 +27,5 @@ RUN python -m venv /py && \
         django-user
 
 ENV PATH="/scripts:/py/bin:$PATH"
-#test
+
 USER django-user
