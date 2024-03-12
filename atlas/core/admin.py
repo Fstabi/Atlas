@@ -12,10 +12,10 @@ from core import models
 class UserAdmin(BaseUserAdmin):
     #Define the admin pages for users.
     ordering = ['id']
-    list_display = ['email', 'name']
+    list_display = ['email', 'username']
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        (_('Personal Info'), {'fields': ('name',)}),
+        (_('Personal Info'), {'fields': ('username',)}),
         (
             _('Permissions'),
             {
@@ -36,7 +36,7 @@ class UserAdmin(BaseUserAdmin):
                 'email',
                 'password1',
                 'password2',
-                'name',
+                'username',
                 'is_active',
                 'is_staff',
                 'is_superuser',
