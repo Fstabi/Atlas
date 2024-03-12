@@ -50,3 +50,10 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
+class Category(models.Model):
+    """Model representing a category."""
+
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
