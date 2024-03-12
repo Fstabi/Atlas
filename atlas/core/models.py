@@ -50,10 +50,20 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
 
+
 class Category(models.Model):
     """Model representing a category."""
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    
+class Level(models.Model):
+    """Model representing a level in the game."""
 
     name = models.CharField(max_length=255)
+    level_score = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
