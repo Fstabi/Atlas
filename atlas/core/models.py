@@ -74,7 +74,6 @@ class BasicChallenge(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     level_id = models.ForeignKey(Level, on_delete=models.CASCADE)
     score_id =  models.IntegerField() #models.ForeignKey(Score, on_delete=models.CASCADE)
-    challenge_score = models.IntegerField(default=0)
 
 class SimpleChallenge(BasicChallenge): #Lo stesso modello si per Flags, multiple choices -> trovare una naming convention
     photo_link = models.URLField()
@@ -91,3 +90,12 @@ class CoordinateChallenge(BasicChallenge):
 
     def __str__(self):
         return self.name
+
+
+class Score(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    challenge = models.ForeignKey(BasicChallenge, on_delete=models.CASCADE)
+    score = models.IntegerField()
+
+    def __str__(self):
+        return f"Score for {self.user.username} on {self.challenge.name}: {self.score}"

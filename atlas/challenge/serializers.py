@@ -7,7 +7,7 @@ class ChallengesSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = BasicChallenge
-        fields = ['id', 'name', 'category_id', 'level_id', 'score_id', 'challenge_score']
+        fields = ['id', 'name', 'category_id', 'level_id', 'score_id']
         read_only_fields = ['id', 'category_id', 'level_id', 'score_id']  # Fields that won't be returned to the user
 
 class SimpleChallengeSerializer(serializers.ModelSerializer):
@@ -16,7 +16,7 @@ class SimpleChallengeSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = SimpleChallenge
-        fields = ['id', 'name', 'description', 'category_id', 'level_id', 'score_id', 'challenge_score', 'photo_link']
+        fields = ['id', 'name', 'description', 'category_id', 'level_id', 'score_id', 'photo_link']
         read_only_fields = ['id', 'category_id', 'level_id', 'score_id', 'photo_link']   
 
 class AreaChallengeSerializer(serializers.ModelSerializer):
@@ -25,7 +25,7 @@ class AreaChallengeSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = AreaChallenge
-        fields = ['id', 'name', 'category_id', 'level_id', 'score_id', 'challenge_score', 'photo_link', 'area']
+        fields = ['id', 'name', 'category_id', 'level_id', 'score_id', 'photo_link', 'area']
         read_only_fields = ['id', 'category_id', 'level_id', 'score_id', 'photo_link', 'area']   
 
 class CoordinateChallengeSerializer(serializers.ModelSerializer):
@@ -34,5 +34,5 @@ class CoordinateChallengeSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = CoordinateChallenge
-        fields = ['id', 'name', 'category_id', 'level_id', 'score_id', 'challenge_score', 'photo_link', 'lat', 'long']
+        fields = ['id', 'name', 'category_id', 'level_id', 'score_id','photo_link', 'lat', 'long']
         read_only_fields = ['id', 'category_id', 'level_id', 'score_id', 'photo_link', 'lat', 'long']  

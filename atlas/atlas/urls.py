@@ -18,5 +18,6 @@ urlpatterns = [
     path('category/', include('category.urls')),
     path('level/', include('level.urls')),
     path('challenge/', include('challenge.urls')),
+    path('score/', include('score.urls')),
     #path('capitalname/', include('capitalname.urls')),
 ]
