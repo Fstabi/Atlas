@@ -67,3 +67,27 @@ class Level(models.Model):
 
     def __str__(self):
         return self.name
+    
+class BasicChallenge(models.Model):
+    name = models.CharField(max_length=100)
+    difficulty = models.IntegerField(null=False)
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+    level_id = models.ForeignKey(Level, on_delete=models.CASCADE)
+    score_id =  models.IntegerField() #models.ForeignKey(Score, on_delete=models.CASCADE)
+    challenge_score = models.IntegerField(default=0)
+
+class SimpleChallenge(BasicChallenge): #Lo stesso modello si per Flags, multiple choices -> trovare una naming convention
+    photo_link = models.URLField()
+
+class AreaChallenge(BasicChallenge):
+    area = models.TextField()
+    photo_link = models.URLField()
+
+class CoordinateChallenge(BasicChallenge):
+    lat = models.TextField()
+    long = models.TextField()
+    photo_link = models.URLField()
+
+
+    def __str__(self):
+        return self.name

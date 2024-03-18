@@ -17,6 +17,6 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('category/', include('category.urls')),
     path('level/', include('level.urls')),
-    #path('challenges/', include('challenges.urls')),
+    path('challenge/', include('challenge.urls')),
     #path('capitalname/', include('capitalname.urls')),
 ]
