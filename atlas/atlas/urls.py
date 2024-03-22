@@ -7,6 +7,7 @@ from django.urls import path, include
 
 
 urlpatterns = [
+    path('', include('atlas.urls')),
     path('admin/', admin.site.urls),
     path('schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path(
@@ -19,5 +20,5 @@ urlpatterns = [
     path('level/', include('level.urls')),
     path('challenge/', include('challenge.urls')),
     path('score/', include('score.urls')),
-    #path('capitalname/', include('capitalname.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
 ]

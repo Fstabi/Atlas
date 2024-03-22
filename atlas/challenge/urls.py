@@ -6,10 +6,9 @@ from . import views
 router = DefaultRouter()
 
 # Register the viewsets with the router
-router.register(r'', views.ChallengeViewSet)
-router.register(r'simple-challenge', views.ChallengeViewSet)
-router.register(r'area-challenge', views.ChallengeViewSet)
-router.register(r'coordinate-challenge', views.ChallengeViewSet)
+router.register(r'', views.BasicChallengeViewSet)
+router.register(r'area-challenge', views.AreaChallengeViewSet)
+router.register(r'coordinate-challenge', views.CoordinateChallengeViewSet)
 
 
 # Define the app name

@@ -10,3 +10,12 @@ class IsAdminUserOrReadOnly(BasePermission):
         # Restrict access to admin users for all
         # other methods (POST, PUT, PATCH, DELETE)
         return request.user and request.user.is_staff
+
+
+class IsAdminUser(BasePermission):
+    """
+    Custom permission to only allow admins to access.
+    """
+
+    def has_permission(self, request, view):
+        return request.user and request.user.is_staff
